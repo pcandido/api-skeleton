@@ -2,13 +2,14 @@
     "name": "api-skeleton",
     "version": "1.0.0",
     "description": "Skeleton for Node REST APIs",
-    "main": "dist/src/index.js",
+    "main": "dist/index.js",
     "scripts": {
         "lint": "eslint ./src ./test --ext .ts",
         "lint:fix": "eslint ./src ./test --ext .ts --fix",
         "build": "tsc",
         "test": "jest",
-        "start": "npm run build && node dist/src/index.js"
+        "start": "npm run build && node dist/index.js",
+        "start:dev": "ts-node-dev src/index.ts"
     },
     "repository": {
         "type": "git",
@@ -29,6 +30,7 @@
         "@typescript-eslint/eslint-plugin": "^4.12.0",
         "@typescript-eslint/parser": "^4.12.0",
         "eslint": "^7.17.0",
+        "ts-node-dev": "^1.1.1",
         "typescript": "^4.1.3"
     }
 }
