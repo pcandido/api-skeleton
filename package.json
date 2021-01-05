@@ -2,9 +2,11 @@
   "name": "api-skeleton",
   "version": "1.0.0",
   "description": "Skeleton for Node REST APIs",
-  "main": "index.js",
+  "main": "dist/src/index.js",
   "scripts": {
-    "test": "jest"
+    "build": "tsc",
+    "test": "jest",
+    "start": "npm run build && node dist/src/index.js"
   },
   "repository": {
     "type": "git",
