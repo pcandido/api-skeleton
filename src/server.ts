@@ -1,6 +1,7 @@
 import './util/module-alias'
 import { Server } from '@overnightjs/core'
 import bodyParser from 'body-parser'
+import { HealthCheck } from './controllers/health-check'
 
 export class SetupServer extends Server {
 
@@ -10,10 +11,16 @@ export class SetupServer extends Server {
 
     async init(): Promise<void> {
         this.setupExpress()
+        this.setupControllers()
     }
 
     private setupExpress() {
         this.app.use(bodyParser.json())
     }
 
+    private setupControllers() {
+        this.addControllers([
+            new HealthCheck(),
+        ])
+    }
 }
