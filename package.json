@@ -8,6 +8,7 @@
         "lint:fix": "eslint ./src ./test --ext .ts --fix",
         "build": "tsc",
         "test": "jest",
+        "test:functional": "jest --projects ./test --runInBand",
         "start": "npm run build && node dist/index.js",
         "start:dev": "ts-node-dev src/index.ts"
     },
